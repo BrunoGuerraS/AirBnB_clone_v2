@@ -3,8 +3,8 @@
 Fabric script that generates a .tgz archive
 from the contents of the web_static
 """
-from fabric.api import local
 from datetime import datetime
+from fabric.api import local
 
 thisdate = "%Y%m%d%H%M%S"
 
@@ -13,8 +13,8 @@ def do_pack():
     try:
         local("mkdir -p versions")
         date = datetime.now().strftime(thisdate)
-        filename = "web_static_{}.tgz".format(date)
-        local("tar -zcvf {} web_static".format(filename))
-        return filename
+        namefile = "versions/web_static_{}.tgz".format(date)
+        local("tar -zcvf {} web_static".format(namefile))
+        return namefile
     except Exception:
         return None
