@@ -6,7 +6,7 @@ Deploying tgz file
 from unicodedata import name
 from fabric.api import put, run, env
 from os.path import exists
-env.hosts = ['35.237.96.82', '54.164.136.88']
+env.hosts = ['35.237.243.237', '184.73.109.206']
 env.user = 'ubuntu'
 
 
