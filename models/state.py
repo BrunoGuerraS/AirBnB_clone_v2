@@ -7,7 +7,7 @@ from sqlalchemy.orm import relationship
 
 
 class State(BaseModel, Base):
-    """ State class """
+    """ State class  add some information"""
     __tablename__ = "states"
 
     if getenv('HBNB_TYPE_STORAGE') == "db":
