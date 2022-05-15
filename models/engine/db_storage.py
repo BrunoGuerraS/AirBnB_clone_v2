@@ -1,4 +1,5 @@
 """Module that define engine of storage in database"""
+from os import remove
 from sqlalchemy import create_engine
 from models.base_model import Base
 from models.state import State
@@ -58,6 +59,10 @@ class DBStorage:
         """Delete from the current database session obj if not None"""
         if obj:
             self.__session.delete(obj)
+
+    def close(self):
+        ''' method on the private session attribute'''
+        self.__session.close()
 
     def reload(self):
         """Create all tables in the database and the current session"""
